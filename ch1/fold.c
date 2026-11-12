@@ -3,7 +3,7 @@
 #define FOLD_COLUMN     12
 #define MAX_LINE_LENGTH 1000
 
-int getlinex(char line[], int max_length);
+int getline(char line[], int max_length);
 void fold(char line[], int col);
 
 main()
@@ -12,7 +12,7 @@ main()
 
     char line[MAX_LINE_LENGTH];
 
-    while ((length = getlinex(line, MAX_LINE_LENGTH)) != EOF)
+    while ((length = getline(line, MAX_LINE_LENGTH)) != EOF)
     {
         if (length < FOLD_COLUMN)
         {
@@ -27,7 +27,7 @@ main()
     return 0;
 }
 
-int getlinex(char line[], int max_length)
+int getline(char line[], int max_length)
 {
     int c;
     int i = 0;
