@@ -1,0 +1,5 @@
+This is a line that does not exceed the fold column.
+This is a line that does indeed exceed the fold column limit that was set by 
+This is a line that is short.
+    This is a line that begins with a tab, but is still short.
+    This is a line that begins with a tab, but it is not shorter than the fold 
