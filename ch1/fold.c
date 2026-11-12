@@ -23,6 +23,8 @@ main()
             fold(line, FOLD_COLUMN);
         }
     }
+
+    return 0;
 }
 
 int getlinex(char line[], int max_length)
@@ -66,7 +68,7 @@ void fold(char line[], int col)
         if (line[current_index] == '\0')
         {
             int j;
-            for (j = start_index; j <= current_index; ++j)
+            for (j = start_index; j < current_index; ++j)
             {
                 putchar(line[j]);
             }
