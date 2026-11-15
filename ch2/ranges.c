@@ -128,12 +128,34 @@ long_range()
     printf("Cal Unsigned Long (min: 0 max: %lu)\n\n", ulong_max);
 }
 
+void
+float_range()
+{
+    printf("Ref Float (min: %f max: %f)\n", FLT_MIN, FLT_MAX);
+}
+
+void
+double_range()
+{
+    printf("Ref Double (min: %f max: %f)\n", DBL_MIN, DBL_MAX);
+}
+
+void
+long_double_range()
+{
+    printf("Ref Long Double (min: %Lf max: %Lf)\n", LDBL_MIN, LDBL_MAX);
+}
+
 main()
 {
     char_range();
     short_range();
     int_range();
     long_range();
+
+    float_range();
+    double_range();
+    long_double_range();
 
     return 0;
 }
