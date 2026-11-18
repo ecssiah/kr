@@ -6,7 +6,7 @@
 int getline_x(char line[], int max);
 int strindexr(char source[], char searchfor[]);
 
-char pattern[] = "it is";
+char pattern[] = "three";
 
 main()
 {
@@ -14,7 +14,7 @@ main()
 
     while (getline_x(line, MAXLINE) > 0)
     {
-        printf("%s", line);
+        printf("%s\n", line);
 
         int index;
 
@@ -22,11 +22,11 @@ main()
 
         if (index == -1)
         {
-            printf("'%s' not found\n", pattern);
+            printf("Did not find: '%s'\n\n", pattern);
         }
         else
         {
-            printf("Found '%s' at: %d/%d\n", pattern, index, strlen(line) - 1);
+            printf("Found '%s' at: %d/%d\n\n", pattern, index, strlen(line) - 1);
         }
     }
 
@@ -66,7 +66,7 @@ strindexr(char s[], char t[])
     {
         for (j = i, k = tlen - 1; k >= 0 && s[j] == t[k]; j--, k--);
 
-        if (k < tlen - 1 && k == -1)
+        if (k == -1)
         {
             return i + 1 - tlen;
         }
