@@ -1,6 +1,28 @@
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
+#include <ctype.h>
+
+int
+getline_x(char s[], int lim)
+{
+    int c, i;
+
+    i = 0;
+    while (--lim > 0 && (c = getchar()) != EOF && c != '\n')
+    {
+        s[i++] = c;
+    }
+
+    if (c == '\n')
+    {
+        s[i++] = c;
+    }
+
+    s[i] = '\0';
+
+    return i;
+}
 
 void 
 reverse(char s[])

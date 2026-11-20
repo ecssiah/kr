@@ -1,0 +1,5 @@
+2.0
+4.0
+	8
+error: stack empty
+	0
