@@ -6,13 +6,13 @@ char buf[BUFSIZE];
 int bufp = 0;
 
 int
-getch_x(void)
+getchx(void)
 {
     return (bufp > 0) ? buf[--bufp] : getchar();
 }
 
 void
-putch_x(int c)
+putchx(int c)
 {
     if (bufp >= BUFSIZE)
     {
@@ -23,4 +23,3 @@ putch_x(int c)
         buf[bufp++] = c;
     }
 }
-

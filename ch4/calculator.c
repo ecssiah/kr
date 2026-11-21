@@ -120,15 +120,15 @@ peek(void)
     }
 }
 
-int getch_x(void);
-void putch_x(int);
+int getchx(void);
+void putchx(int);
 
 int
 getop(char s[])
 {
     int i, c;
 
-    while ((s[0] = c = getch_x()) == ' ' || c == '\t');
+    while ((s[0] = c = getchx()) == ' ' || c == '\t');
 
     s[1] = '\0';
 
@@ -143,24 +143,23 @@ getop(char s[])
 
     if (c == '-' || isdigit(c))
     {
-        while (isdigit(s[++i] = c = getch_x()));
+        while (isdigit(s[++i] = c = getchx()));
     }
 
     if (c == '.')
     {
-        while (isdigit(s[++i] = c = getch_x()));
+        while (isdigit(s[++i] = c = getchx()));
     }
 
     s[i] = '\0';
 
     if (c != EOF)
     {
-        putch_x(c);
+        putchx(c);
     }
 
     return NUMBER;
 }
-
 
 #define BUFSIZE 100
 
@@ -168,13 +167,13 @@ char buf[BUFSIZE];
 int bufp = 0;
 
 int
-getch_x(void)
+getchx(void)
 {
     return (bufp > 0) ? buf[--bufp] : getchar();
 }
 
 void
-putch_x(int c)
+putchx(int c)
 {
     if (bufp >= BUFSIZE)
     {
@@ -185,4 +184,3 @@ putch_x(int c)
         buf[bufp++] = c;
     }
 }
-

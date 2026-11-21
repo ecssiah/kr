@@ -31,6 +31,7 @@ main()
             break;
         case '/':
             op_right = pop();
+
             if (op_right != 0.0)
             {
                 push(pop() / op_right);
@@ -39,9 +40,11 @@ main()
             {
                 printf("error: zero divisor\n");
             }
+            
             break;
         case '%':
             op_right = pop();
+
             if (op_right != 0.0)
             {
                 push((int)pop() % (int)op_right);
@@ -50,6 +53,7 @@ main()
             {
                 printf("error: zero divisor\n");
             }
+
             break;
         case '\n':
             result = pop();
