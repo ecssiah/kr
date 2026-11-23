@@ -25,7 +25,7 @@ float getfloat(float *pn)
 
     for (*pn = 0.0; isdigit(c); c = getch())
     {
-        const float fc = c - '0';
+        float fc = c - '0';
         *pn = 10.0 * *pn + fc;
     }
     
@@ -35,7 +35,7 @@ float getfloat(float *pn)
 
         for (c = getch(); isdigit(c); c = getch())
         {
-            const float fc = c - '0';
+            float fc = c - '0';
             *pn += m * fc;
 
             m /= 10.0;
